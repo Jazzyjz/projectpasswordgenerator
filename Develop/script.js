@@ -1,33 +1,30 @@
-// Assignment code here
-const keys = {
-  uppercase: "ABCDEFGHIJKLMNOPQRSTUVwxyz",
-  lowercase: "abcdefghijklmnopqrstuvwxyz",
-  number: "0123456789",
-  symbol:"!@#$%^&*()_+?<>;:=-"
-}
-
-// Get references to the #generate element
+//Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  alert 
-  const upper = document.getElementById ("uppercase");
-  const lower = document.getElementById("lowercase");
-  const number = document.getElementById("number");
-  const symbol = document.getElementById("symbol");
-  if (upper + lower + number + symbol === 0) {
-    alert ("Please check atleast one box!");
-    return;
-  }
-   
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+function generatePassword(){
 
+  const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  const number = "0123456789"
+  const symbol = "!@#$%^&*()_+=-`}{/<>";
+  let password = "";
+  password += upperCase[Math.floor(Math.random()* upperCase.length)];
+  password += lowerCase[Math.floor(Math.random()* lowerCase.length)];
+  password += number[Math.floor(Math.random()* number.length)];
+  password += symbol[Math.floor(Math.random()* symbol.length)];
+
+
+return "Generated Password: " + password;
 }
 
-// Add event listener to generate button
+//write password to the #passowrd input 
+function writePassword(){
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
+
+  passwordText.value = password;
+}
+
+//Add Event Listener
+
 generateBtn.addEventListener("click", writePassword);
-
-
