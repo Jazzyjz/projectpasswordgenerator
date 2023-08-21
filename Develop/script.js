@@ -8,9 +8,8 @@ function generatePassword(){
   const number = "0123456789"
   const symbol = "!@#$%^&*()_+=-`}{/<>";
   let possibleChoice = "";
-  let password = "";
 
-  //create prompt for user to enter password
+  //create prompt for user to enter password length
 
   let answer = parseInt(prompt("Enter length of password")) ;
   //create alert if user enters less than 8 characters 
@@ -42,11 +41,13 @@ function generatePassword(){
   let symbola = confirm("Do you want symbols?");
   // console.log(symbola);
 
+  
+//create if statements for client password request
   if (lowerCasea){
     possibleChoice += lowerCase
   }
   if (upperCasea){
-    possibleChoice += upperCase
+    possibleChoice += upperCase[Math.floor(Math.random()* upperCase.length)];
   }
 
   if (numbera){
@@ -56,13 +57,10 @@ function generatePassword(){
     possibleChoice += symbol
   }
 
-  possibleChoice
-
-  console.log(possibleChoice)
-  possibleChoice += upperCase[Math.floor(Math.random()* upperCase.length)];
-  password += lowerCase[Math.floor(Math.random()* lowerCase.length)];
-  password += number[Math.floor(Math.random()* number.length)];
-  password += symbol[Math.floor(Math.random()* symbol.length)];
+  // possibleChoice += upperCase[Math.floor(Math.random()* upperCase.length)];
+  // possibleChoice += lowerCase[Math.floor(Math.random()* lowerCase.length)];
+  // possibleChoice += number[Math.floor(Math.random()* number.length)];
+  // possibleChoice += symbol[Math.floor(Math.random()* symbol.length)];
 
 
 return "Generated Password: " + possibleChoice;
