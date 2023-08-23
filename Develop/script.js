@@ -43,26 +43,21 @@ function generatePassword(){
 
   
 //create if statements for client password request
+if (answer){
+  possibleChoice.length += answer;
+}
   if (lowerCasea){
-    possibleChoice += lowerCase
+    possibleChoice += lowerCase[Math.floor(Math.random()*26)];
   }
   if (upperCasea){
-    possibleChoice += upperCase[Math.floor(Math.random()* upperCase.length)];
+    possibleChoice += upperCase[Math.floor(Math.random()*26)];
   }
-
   if (numbera){
-    possibleChoice += number
+    possibleChoice += number[Math.floor(Math.random()*10)];
   }
   if (symbola){
-    possibleChoice += symbol
+    possibleChoice += symbol[Math.floor(Math.random()*19)];
   }
-
-  // possibleChoice += upperCase[Math.floor(Math.random()* upperCase.length)];
-  // possibleChoice += lowerCase[Math.floor(Math.random()* lowerCase.length)];
-  // possibleChoice += number[Math.floor(Math.random()* number.length)];
-  // possibleChoice += symbol[Math.floor(Math.random()* symbol.length)];
-
-
 return "Generated Password: " + possibleChoice;
 }
 
